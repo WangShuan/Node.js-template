@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback 留言本</title>
+  <link rel="stylesheet" href="../public/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="header container">
+    <div class="page-header mt-3">
+      <h2>Feedback 留言本 <small> 使用 Node.js + art-template 開發</small></h2>
+      <a class="btn btn-success mt-2" href="/post">點我發表留言</a>
+    </div>
+  </div>
+  <div class="comments container mt-4">
+    <ul class="list-group">
+      {{each comments}}
+      <li class="list-group-item">
+        {{ $value.name }} 說：{{ $value.message }} 
+        <span class="float-right">發表日期: {{ $value.dateTime }}</span>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+</html>

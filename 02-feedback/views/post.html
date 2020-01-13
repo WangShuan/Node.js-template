@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback 留言本-發表</title>
+  <link rel="stylesheet" href="../public/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="header container">
+    <div class="page-header mt-4">
+      <h1>發表評論 <small><a href="/">點我回首頁</a></small></h1>
+    </div>
+  </div>
+  <div class="comments container mt-5">
+    <!-- 
+      以前表单是如何提交的？
+      表单中需要提交的表单控件元素必须具有 name 属性
+      表单提交分为：
+        1. 默认的提交行为
+        2. 表单异步提交
+
+        action 就是表单提交的地址，说白了就是请求的 url 地址
+        method 请求方法
+            get
+            post
+    -->
+    <form action="/send" method="get">
+      <div class="form-group">
+        <label for="input_name">暱稱</label>
+        <input type="text" class="form-control" required minlength="2" maxlength="10" id="input_name" name="name" placeholder="請輸入暱稱">
+      </div>
+      <div class="form-group">
+        <label for="textarea_message">留言内容</label>
+        <textarea class="form-control" name="message" id="textarea_message" cols="30" rows="10" required minlength="5" maxlength="50"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">發送</button>
+    </form>
+  </div>
+</body>
+
+</html>
